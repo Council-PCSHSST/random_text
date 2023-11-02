@@ -8,6 +8,10 @@ const randomPos = () => {
 }
 
 const changeTextRandom = () => {
+    if(play_sound_start) {
+        sound_reciever.play();
+        play_sound_start = false;
+    }
     let numPos = randomPos();
     randomTextHtml.innerHTML = "is... " + TextClues[numPos];
 
@@ -15,6 +19,7 @@ const changeTextRandom = () => {
 }
 
 const btn_submit = () => {
+    play_sound_start = true;
     press_time++;
     active = 1;
 }
@@ -37,8 +42,11 @@ let TextClues = [];
 let btn_add = document.getElementById("btn_add");
 let randomTextHtml = document.getElementById("randomText");
 let status_btn = document.getElementById("switch");
+let sound_reciever = document.getElementById("sound");
+
 let press_time = 0;
 let active = 0;
+let play_sound_start = false;
 status_btn.disabled = true;
 status_btn.innerHTML = "Disabled btn!!";
 
@@ -47,7 +55,7 @@ status_btn.innerHTML = "Disabled btn!!";
 // Asynchronus function to random text position
 setInterval(() => {
     if (press_time % 2 == 1) {
-        if (allPos === -1) {
+        if (allPos < 1) {
             randomTextHtml.innerHTML = "Out of range random text!";
             status_btn.innerHTML = "Disabled btn!!";
             status_btn.disabled = true;
@@ -58,10 +66,8 @@ setInterval(() => {
         if (active === 1) {
             TextClues.splice(nums, 1);
             allPos--;
-            console.log(TextClues);
             active = 0;
-            console.log(`allPos have are : ${allPos}`);
         }
     }
-}, 10)
+}, 30)
 

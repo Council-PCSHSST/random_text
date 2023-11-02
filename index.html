@@ -1,29 +1,58 @@
 <!DOCTYPE html>
 <html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Council PCSHSST :: Random TV Prototype System</title>
     <style>
-        button#switch{
-            background-color: green;
-            color: #fff;
-        }
-        button#switch:disabled{
-            background-color: rgb(2, 37, 2);
-            color: #fff;
-        }
+      button#switch {
+        background-color: green;
+        color: #fff;
+      }
+      button#switch:disabled {
+        background-color: rgb(2, 37, 2);
+        color: #fff;
+      }
     </style>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <audio id="sound"><source src="sfx/drum_roll.mp3" type="audio/mpeg"></audio>
     <p>Text to randoms:</p>
-    <textarea id="clues" cols="30" rows="10"></textarea>
-    <button id="btn_add" onclick="addText()">Add!!</button>
+    <button id="settings">ตั้งค่าระบบ</button>
     <h1>Your message is ...</h1>
     <p id="randomText">Please input text for random!!</p>
-    <hr>
+    <hr />
     <button id="switch" onclick="btn_submit()">Stop/Start</button>
+
+    <div id="popup" class="modal">
+      <div class="modal-content">
+        <span class="close" id="close">&times;</span>
+        <textarea id="clues" cols="30" rows="10"></textarea>
+        <button id="btn_add" onclick="addText()">Add!!</button>
+      </div>
+    </div>
+
     <script src="sys.js"></script>
-</body>
+    <script>
+      let settings_btn = document.getElementById("settings");
+      let modal = document.getElementById("popup");
+      let closeButton = document.getElementById("close");
+
+      settings_btn.onclick = function () {
+        modal.style.display = "block";
+      };
+
+      closeButton.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      window.onclick = function (e) {
+        if (e.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    </script>
+  </body>
 </html>
