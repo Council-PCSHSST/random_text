@@ -1,4 +1,13 @@
 /* The Modal (background) */
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+
+body{
+    font-family: 'Kanit', sans-serif;
+    margin: auto;
+    width: 50rem;
+    background-color: purple;
+}
 .modal {
   display: none;
   position: fixed;
@@ -12,6 +21,7 @@
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.4);
 }
+
 
 /* Modal Content */
 .modal-content {
@@ -36,3 +46,158 @@
   text-decoration: none;
   cursor: pointer;
 }
+p{
+    font-size:3rem;
+    color: white;
+    background-color: purple;
+    padding:1rem;
+    text-align: center;
+    
+}
+p#randomText{
+    
+    border-radius:10rem;
+    color: black;
+    background-color: white;
+    border:0.3rem solid black;
+
+}
+h1{
+    font-size:2.5rem;
+    color: white;
+    text-align: center;
+}
+button#settings{
+    color: darkseagreen;
+    font-size:1.5rem;
+    padding:1rem;
+    margin: auto;
+    width: 100%;
+    background-color: white;
+    border:0.5rem solid darkseagreen; 
+    border-radius:20rem;
+    transition: 0.25s
+}
+button#settings:hover{
+    color:#fff;
+    font-size:1.5rem;
+    padding:1rem;
+    margin: auto;
+    width: 100%;
+    background-color:darkseagreen;
+    border:0.5rem solid darkseagreen; 
+    border-radius:20rem;
+    transition: 0.25s
+    
+}
+button#switch{
+    color:black;
+    font-size:1.5rem;
+    padding:1rem;
+    margin: auto;
+    width: 100%;
+    background-color:red;
+    border:0.2rem solid rgb(2, 37, 2); 
+    border-radius:20rem;
+    transition: 0.25s
+}
+button#switch:hover{
+    color:#000;
+    font-size:1.5rem;
+    padding:1rem;
+    margin: auto;
+    width: 100%;
+    background-color:white;
+    border:0.2rem solid white; 
+    border-radius:20rem;
+    transition: 0.25s
+    
+}
+/*for mobile*/
+@media only screen and (max-width: 415px) {
+body{
+    font-family: 'Kanit', sans-serif;
+    margin: auto;
+    width: 20rem;
+    background-color: purple;
+}
+p{
+    font-size:2rem;
+    color: white;
+    background-color: purple;
+    padding:1rem;
+    text-align: center;
+    
+}
+p#randomText{
+    border-radius:10rem;
+    color: black;
+    background-color: white;
+    border:0.3rem solid black;
+
+}
+h1{
+    font-size:1rem;
+    color: white;
+    text-align: center;
+}
+}
+@media only screen and (max-width: 376px) {
+body {
+    font-family: 'Kanit', sans-serif;
+    margin: auto;
+    width: 20rem;
+    background-color: purple;
+
+}
+p{
+    font-size:2rem;
+    color: white;
+    background-color: purple;
+    padding:1rem;
+    text-align: center;
+    
+}
+p#randomText{
+    border-radius:10rem;
+    color: black;
+    background-color: white;
+    border:0.3rem solid black;
+
+}
+h1{
+    font-size:1rem;
+    color: white;
+    text-align: center;
+}
+}
+@media only screen and (max-width: 821px) {
+body {
+    font-family: 'Kanit', sans-serif;
+    margin: auto;
+    width: 40rem;
+    background-color: purple;
+
+}
+p{
+    font-size:2rem;
+    color: white;
+    background-color: purple;
+    padding:1rem;
+    text-align: center;
+    
+}
+p#randomText{
+    border-radius:10rem;
+    color: black;
+    background-color: white;
+    border:0.3rem solid black;
+
+}
+h1{
+    font-size:1.5rem;
+    color: white;
+    text-align: center;
+}
+}
+ 
